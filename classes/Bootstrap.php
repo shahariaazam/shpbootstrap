@@ -33,7 +33,12 @@ class Bootstrap
         (empty($headingLabel))?false:"";
         (!in_array($headingLabel,$this->_headingTags));
             false;
-
+        (!array_key_exists('text',$options));
+            false;
+        (!array_key_exists('class',$options));
+            echo "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
+        else
+            echo "<".$headingLabel.implode(' ',$options['class']).">".$options['text']."</".$headingLabel.">";
 
 //            echo "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
 
