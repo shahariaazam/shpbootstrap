@@ -25,7 +25,9 @@ class Bootstrap
         'h5',
         'h6'
     );
-
+    public function __construct(){
+        $this->name="Bootstrap";
+    }
     /**
      * @param $headingLabel = h1, h2, h3, h4, h5, h6
      * @param array $options = array('text'=>'You text inside heading tag','class'=>'Bootstrap CSS Class')
@@ -44,5 +46,25 @@ class Bootstrap
         }else{
             return "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
         }
+    }
+
+    /**
+     * @param null $text
+     * @param array $options
+     * @return string
+     */
+    public function blockQuote($text=null,$options=array()){
+        (empty($text))?false:"";
+        if(array_key_exists('cite',$options)){
+            if(array_key_exists('identifier',$options['cite']) && array_key_exists('source_name',$options['cite'])){
+                return sprintf("<blockquote><p>{$text}<small>{$options['cite']['identifier']} <cite title='{$options['cite']['source_name']}'>{$options['cite']['source_name']}</cite></small></p></blockquote>");
+            }else{
+                return sprintf("<blockquote><p>{$text}</p></blockquote>");
+            }
+        }else{
+            return sprintf("<blockquote><p>{$text}</p></blockquote>");
+        }
+//        <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+//        return sprintf("<blockquote><p>{$text}</p></blockquote>");
     }
 }
