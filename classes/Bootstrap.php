@@ -29,30 +29,13 @@ class Bootstrap
      * @param $headingLabel
      * @param array $options
      */
-    public function TextHeading($headingLabel, $options=array()){
-        array_walk($options,array($this, 'AllowableHeadingTag'));
-        return in_array($headingLabel,$this->_headingTags);
-//        $options .= array('escape' => true);
-        /*$headingLabel=array_filter($this->_headingTags,function ($headingLabel){
-//            return ($headingLabel!==$this->_headingTags)?false:true;
-            foreach($this->_headingTags as $tags){
-                ($headingLabel!==$tags)?false:true;
-                break;
-            }
-        });
-        (!is_array($options))?false:true;
-        (!array_key_exists('text',$options))?false:true;
-        if(array_key_exists('class',$options)){
-            $styleClasses=implode(' ',$options['class']);
-            return '<'.$headingLabel. 'class='.$styleClasses.'>';
-        }
-        else
-        {
-            return '<'.$headingLabel.'>';
-        }*/
-    }
-    function AllowableHeadingTag($tags,$key){
-//        (!array_key_exists($tags,$key))?false:true;
-    }
+    public function headTag($headingLabel, $options=array()){
+        (empty($headingLabel))?false:"";
+        (!in_array($headingLabel,$this->_headingTags));
+            false;
 
+
+//            echo "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
+
+    }
 }
