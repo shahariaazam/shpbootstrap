@@ -7,3 +7,7 @@
  * @Project URL: http://www.shahariaazam.com
  * @Description: Bootstrap twitter CSS framework handle through PHP component
  */
+define('CLASS_DIR','classes');
+require_once(CLASS_DIR.'/Bootstrap.php');
+$Bootstrap=new Bootstrap();
+echo $Bootstrap->name;
