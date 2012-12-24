@@ -25,22 +25,24 @@ class Bootstrap
         'h5',
         'h6'
     );
+
     /**
-     * @param $headingLabel
-     * @param array $options
+     * @param $headingLabel = h1, h2, h3, h4, h5, h6
+     * @param array $options = array('text'=>'You text inside heading tag','class'=>'Bootstrap CSS Class')
+     * @return bool|string
      */
     public function headTag($headingLabel, $options=array()){
         (empty($headingLabel))?false:"";
         (!in_array($headingLabel,$this->_headingTags));
             false;
-        (!array_key_exists('text',$options));
-            false;
-        (!array_key_exists('class',$options));
-            echo "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
-        else
-            echo "<".$headingLabel.implode(' ',$options['class']).">".$options['text']."</".$headingLabel.">";
-
-//            echo "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
-
+        if(!array_key_exists('text',$options) && empty($options['text']))
+        {
+            return false;
+        }
+        if(array_key_exists('class',$options)){
+            return "<".$headingLabel.' class="'.implode(' ',(array)$options['class']).'"'.">".$options['text']."</".$headingLabel.">";
+        }else{
+            return "<".$headingLabel.">".$options['text']."</".$headingLabel.">";
+        }
     }
 }
