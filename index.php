@@ -1,13 +1,9 @@
 <?php
-/**
- * @Author: Shaharia Azam
- * @Author URL: http://www.shahariaazam.com
- * @Project: Bootstrap CSS Framework PHP Helper
- * @Version: 1.0
- * @Project URL: http://www.shahariaazam.com
- * @Description: Bootstrap twitter CSS framework handle through PHP component
- */
 define('CLASS_DIR','classes');
+define('CSS_DIR','assets/css');
+define('JS_DIR','assets/js');
+define('IMG_DIR','assets/img');
 require_once(CLASS_DIR.'/Bootstrap.php');
+
 $Bootstrap=new Bootstrap();
 echo $Bootstrap->name;
