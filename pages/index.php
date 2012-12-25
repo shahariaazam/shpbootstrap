@@ -87,7 +87,7 @@ $Bootstrap= new Bootstrap();
     <div class="row">
         <div class="span4">
             <h2>Heading</h2>
-            <?php echo $Bootstrap->blockQuote('OK',array('cite'=>array('identifier'=>'Collected from ','source_name'=>'Shaharia Azam')));?>
+            <?php echo $Bootstrap->blockQuote('OK',array('class'=>'pull-right','cite'=>array('identifier'=>'Collected from ','source_name'=>'Shaharia Azam')));?>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn" href="#">View details &raquo;</a></p>
         </div>
