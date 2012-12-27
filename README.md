@@ -3,6 +3,8 @@ SHPBOOTSTRAP
 
 PHP Class for working with Twitter Bootstrap CSS framework.
 
+Updated with `Twitter Bootstrap - v2.2.2`
+
 Contribution
 -------
 
